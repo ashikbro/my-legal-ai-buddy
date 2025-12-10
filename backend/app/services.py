@@ -1,15 +1,19 @@
 import os
 import re
-import spacy
 from typing import List, Dict, Optional
 
-# Try to load spaCy model, fallback to basic processing if not available
+# Try to load spaCy, fallback to basic processing if not available
 try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
+    import spacy
+    try:
+        nlp = spacy.load("en_core_web_sm")
+    except OSError:
+        nlp = None
+        print("Warning: spaCy model 'en_core_web_sm' not found. NLP features will be limited.")
+        print("Install it with: python -m spacy download en_core_web_sm")
+except ImportError:
     nlp = None
-    print("Warning: spaCy model 'en_core_web_sm' not found. NLP features will be limited.")
-    print("Install it with: python -m spacy download en_core_web_sm")
+    print("Warning: spaCy not installed. Install with: pip install spacy")
 
 # OpenAI integration (optional - works without API key for demo)
 try:
