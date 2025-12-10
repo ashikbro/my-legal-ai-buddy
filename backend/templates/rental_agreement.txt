@@ -1,0 +1,101 @@
+RESIDENTIAL RENTAL AGREEMENT
+
+This Rental Agreement (the "Agreement") is made on {{date}} between:
+
+LANDLORD: {{landlord_name}}
+Address: {{landlord_address}}
+Phone: {{landlord_phone}}
+
+and
+
+TENANT: {{tenant_name}}
+Address: {{tenant_address}}
+Phone: {{tenant_phone}}
+
+1. PROPERTY
+
+The Landlord agrees to rent to the Tenant the residential property located at:
+{{property_address}}
+(the "Property")
+
+2. TERM
+
+The term of this Agreement shall begin on {{start_date}} and end on {{end_date}}.
+
+3. RENT
+
+The monthly rent for the Property is ${{rent_amount}}, payable on the {{payment_day}} day of each month.
+
+Payment method: {{payment_method}}
+
+4. SECURITY DEPOSIT
+
+The Tenant shall pay a security deposit of ${{security_deposit}} upon signing this Agreement. The deposit will be held in accordance with state law and returned within {{return_days}} days after the end of tenancy, minus any lawful deductions.
+
+5. UTILITIES
+
+The following utilities are included in the rent: {{utilities_included}}
+
+The Tenant is responsible for: {{utilities_tenant}}
+
+6. USE OF PROPERTY
+
+The Property shall be used exclusively as a private residence for the Tenant and {{occupants_count}} additional occupants. No commercial activities are permitted without written consent.
+
+7. MAINTENANCE AND REPAIRS
+
+Landlord's Responsibilities:
+- Maintain the Property in habitable condition
+- Make necessary repairs to plumbing, heating, and electrical systems
+- Maintain common areas
+
+Tenant's Responsibilities:
+- Keep the Property clean and sanitary
+- Promptly notify Landlord of needed repairs
+- Pay for damages caused by negligence or misuse
+
+8. PETS
+
+{{pets_allowed}}
+
+9. ALTERATIONS
+
+The Tenant shall not make alterations or improvements to the Property without prior written consent from the Landlord.
+
+10. ENTRY BY LANDLORD
+
+The Landlord may enter the Property for inspection, maintenance, or to show it to prospective tenants or buyers, with {{notice_hours}} hours advance notice, except in emergencies.
+
+11. TERMINATION
+
+Either party may terminate this Agreement with {{notice_period}} days written notice. Early termination by Tenant may result in forfeiture of the security deposit.
+
+12. DEFAULT
+
+If Tenant fails to pay rent or breaches any other term of this Agreement, Landlord may terminate the Agreement and pursue legal remedies, including eviction.
+
+13. ADDITIONAL TERMS
+
+{{additional_terms}}
+
+14. GOVERNING LAW
+
+This Agreement shall be governed by the laws of {{jurisdiction}}.
+
+15. ENTIRE AGREEMENT
+
+This Agreement constitutes the entire agreement between the parties and supersedes all prior understandings.
+
+SIGNATURES:
+
+LANDLORD:
+
+_______________________________
+{{landlord_name}}
+Date: {{date}}
+
+TENANT:
+
+_______________________________
+{{tenant_name}}
+Date: {{date}}

@@ -1,0 +1,71 @@
+NON-DISCLOSURE AGREEMENT
+
+This Non-Disclosure Agreement (the "Agreement") is entered into as of {{date}} (the "Effective Date") by and between:
+
+{{party1_name}} ("Disclosing Party")
+Address: {{party1_address}}
+
+and
+
+{{party2_name}} ("Receiving Party")
+Address: {{party2_address}}
+
+WHEREAS, the Disclosing Party possesses certain confidential and proprietary information; and
+
+WHEREAS, the Receiving Party desires to receive such confidential information for the purpose of {{purpose}};
+
+NOW, THEREFORE, in consideration of the mutual covenants and agreements contained herein, the parties agree as follows:
+
+1. DEFINITION OF CONFIDENTIAL INFORMATION
+
+"Confidential Information" means any and all information disclosed by the Disclosing Party to the Receiving Party, whether orally, in writing, or in any other form, that is designated as confidential or that reasonably should be understood to be confidential given the nature of the information and the circumstances of disclosure.
+
+2. OBLIGATIONS OF RECEIVING PARTY
+
+The Receiving Party agrees to:
+a) Hold the Confidential Information in strict confidence;
+b) Not disclose the Confidential Information to any third parties without prior written consent;
+c) Use the Confidential Information solely for the purpose stated above;
+d) Protect the Confidential Information with the same degree of care used to protect its own confidential information, but in no case less than reasonable care.
+
+3. EXCLUSIONS
+
+The obligations set forth in Section 2 shall not apply to information that:
+a) Was known to the Receiving Party prior to disclosure by the Disclosing Party;
+b) Is or becomes publicly available through no breach of this Agreement;
+c) Is rightfully received by the Receiving Party from a third party without breach of any confidentiality obligation;
+d) Is independently developed by the Receiving Party without use of the Confidential Information.
+
+4. TERM
+
+This Agreement shall remain in effect for a period of {{duration}} years from the Effective Date, unless earlier terminated by either party with thirty (30) days written notice.
+
+5. RETURN OF MATERIALS
+
+Upon termination of this Agreement or upon request by the Disclosing Party, the Receiving Party shall promptly return or destroy all materials containing Confidential Information.
+
+6. NO LICENSE
+
+Nothing in this Agreement grants any license or right to the Receiving Party in or to any intellectual property of the Disclosing Party.
+
+7. GOVERNING LAW
+
+This Agreement shall be governed by and construed in accordance with the laws of {{jurisdiction}}.
+
+8. ENTIRE AGREEMENT
+
+This Agreement constitutes the entire agreement between the parties concerning the subject matter hereof and supersedes all prior agreements and understandings.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the Effective Date.
+
+DISCLOSING PARTY:
+
+_______________________________
+{{party1_name}}
+Date: {{date}}
+
+RECEIVING PARTY:
+
+_______________________________
+{{party2_name}}
+Date: {{date}}
