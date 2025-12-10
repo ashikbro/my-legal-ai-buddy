@@ -1,0 +1,119 @@
+SERVICE AGREEMENT
+
+This Service Agreement (the "Agreement") is entered into as of {{date}} between:
+
+SERVICE PROVIDER: {{provider_name}}
+Address: {{provider_address}}
+Email: {{provider_email}}
+Phone: {{provider_phone}}
+
+and
+
+CLIENT: {{client_name}}
+Address: {{client_address}}
+Email: {{client_email}}
+Phone: {{client_phone}}
+
+1. SERVICES
+
+The Service Provider agrees to provide the following services to the Client:
+
+{{services_description}}
+
+2. TERM
+
+This Agreement shall commence on {{start_date}} and continue until {{end_date}}, unless earlier terminated as provided herein.
+
+3. COMPENSATION
+
+The Client agrees to pay the Service Provider as follows:
+
+Fee Structure: {{fee_structure}}
+Total Amount: ${{total_amount}}
+Payment Schedule: {{payment_schedule}}
+
+Expenses: {{expense_terms}}
+
+4. PAYMENT TERMS
+
+Invoices will be issued {{invoice_frequency}}.
+Payment is due within {{payment_due_days}} days of invoice date.
+Late payments will incur a fee of {{late_fee}}% per month.
+
+5. INDEPENDENT CONTRACTOR
+
+The Service Provider is an independent contractor and not an employee of the Client. The Service Provider is responsible for all taxes, insurance, and other obligations.
+
+6. DELIVERABLES
+
+The Service Provider will deliver:
+
+{{deliverables}}
+
+7. TIMELINE
+
+Project milestones and deadlines:
+
+{{timeline}}
+
+8. REVISIONS
+
+The fee includes {{revision_count}} rounds of revisions. Additional revisions will be billed at ${{revision_rate}} per hour.
+
+9. CONFIDENTIALITY
+
+Both parties agree to keep confidential all non-public information disclosed during the course of this Agreement.
+
+10. INTELLECTUAL PROPERTY
+
+{{ip_ownership}}
+
+11. WARRANTIES
+
+The Service Provider warrants that:
+- Services will be performed in a professional manner
+- Work will be original and not infringe on third-party rights
+- All deliverables will meet industry standards
+
+12. LIMITATION OF LIABILITY
+
+The Service Provider's liability shall not exceed the total amount paid under this Agreement.
+
+13. TERMINATION
+
+Either party may terminate this Agreement with {{termination_notice}} days written notice.
+
+Upon termination:
+- Client pays for services completed to date
+- Service Provider delivers all work in progress
+- Both parties return confidential information
+
+14. DISPUTE RESOLUTION
+
+Disputes shall be resolved through {{dispute_method}} in {{dispute_location}}.
+
+15. FORCE MAJEURE
+
+Neither party shall be liable for delays or failures due to circumstances beyond their reasonable control.
+
+16. GOVERNING LAW
+
+This Agreement shall be governed by the laws of {{jurisdiction}}.
+
+17. ENTIRE AGREEMENT
+
+This Agreement constitutes the entire agreement between the parties and may only be amended in writing.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.
+
+SERVICE PROVIDER:
+
+_______________________________
+{{provider_name}}
+Date: {{date}}
+
+CLIENT:
+
+_______________________________
+{{client_name}}
+Date: {{date}}

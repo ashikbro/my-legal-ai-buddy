@@ -1,0 +1,102 @@
+EMPLOYMENT CONTRACT
+
+This Employment Contract (the "Agreement") is made on {{date}} between:
+
+EMPLOYER: {{employer_name}}
+Address: {{employer_address}}
+
+and
+
+EMPLOYEE: {{employee_name}}
+Address: {{employee_address}}
+
+1. POSITION AND DUTIES
+
+The Employee is hired for the position of {{job_title}}. The Employee agrees to perform the following duties:
+
+{{job_duties}}
+
+2. EMPLOYMENT TERM
+
+This employment shall begin on {{start_date}}. This is an {{employment_type}} position.
+
+3. COMPENSATION
+
+The Employee shall receive compensation as follows:
+
+Salary/Wage: ${{salary}} per {{pay_period}}
+Payment Schedule: {{payment_schedule}}
+
+4. BENEFITS
+
+The Employee is eligible for the following benefits:
+
+{{benefits}}
+
+5. WORKING HOURS
+
+Standard working hours are {{work_hours}} per week, from {{start_time}} to {{end_time}}, {{work_days}}.
+
+6. VACATION AND LEAVE
+
+The Employee is entitled to {{vacation_days}} days of paid vacation per year.
+Sick leave: {{sick_days}} days per year.
+Additional leave as required by law.
+
+7. CONFIDENTIALITY
+
+The Employee agrees to maintain the confidentiality of all proprietary information, trade secrets, and confidential business information of the Employer, both during and after employment.
+
+8. NON-COMPETE (if applicable)
+
+{{non_compete_clause}}
+
+9. INTELLECTUAL PROPERTY
+
+All work products, inventions, and intellectual property created by the Employee during the course of employment shall be the property of the Employer.
+
+10. TERMINATION
+
+Either party may terminate this employment with {{notice_period}} days written notice.
+
+The Employer may terminate immediately for cause, including but not limited to:
+- Gross misconduct
+- Breach of confidentiality
+- Failure to perform duties
+- Violation of company policies
+
+11. SEVERANCE
+
+In case of termination without cause, the Employee may be entitled to {{severance_terms}}.
+
+12. DISPUTE RESOLUTION
+
+Any disputes arising from this Agreement shall be resolved through {{dispute_resolution}}.
+
+13. GOVERNING LAW
+
+This Agreement shall be governed by the laws of {{jurisdiction}}.
+
+14. ENTIRE AGREEMENT
+
+This Agreement constitutes the entire agreement between the parties and supersedes all prior agreements and understandings.
+
+15. AMENDMENTS
+
+This Agreement may only be amended in writing, signed by both parties.
+
+ACKNOWLEDGMENT
+
+By signing below, both parties acknowledge that they have read, understood, and agree to be bound by the terms of this Agreement.
+
+EMPLOYER:
+
+_______________________________
+{{employer_name}}
+Date: {{date}}
+
+EMPLOYEE:
+
+_______________________________
+{{employee_name}}
+Date: {{date}}

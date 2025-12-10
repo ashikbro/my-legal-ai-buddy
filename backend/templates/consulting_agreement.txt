@@ -1,0 +1,136 @@
+CONSULTING AGREEMENT
+
+This Consulting Agreement (the "Agreement") is made on {{date}} between:
+
+CONSULTANT: {{consultant_name}}
+Business Name: {{consultant_business}}
+Address: {{consultant_address}}
+Email: {{consultant_email}}
+
+and
+
+COMPANY: {{company_name}}
+Address: {{company_address}}
+Contact: {{company_contact}}
+
+1. CONSULTING SERVICES
+
+The Consultant agrees to provide the following consulting services:
+
+{{services_description}}
+
+Scope of Work:
+{{scope_of_work}}
+
+2. TERM AND TERMINATION
+
+This Agreement begins on {{start_date}} and continues {{term_type}}.
+
+Either party may terminate with {{termination_notice}} days written notice.
+
+3. COMPENSATION
+
+Consulting Fee: ${{hourly_rate}} per hour
+OR
+Fixed Fee: ${{fixed_fee}} for the project
+
+Payment Terms: {{payment_terms}}
+
+4. EXPENSES
+
+The Company shall reimburse pre-approved expenses including:
+{{reimbursable_expenses}}
+
+5. TIME COMMITMENT
+
+The Consultant will dedicate approximately {{hours_per_week}} hours per week to this engagement.
+
+6. INDEPENDENT CONTRACTOR STATUS
+
+The Consultant is an independent contractor. This Agreement does not create an employment relationship, partnership, or joint venture.
+
+The Consultant:
+- Is responsible for own taxes and insurance
+- Determines own work methods and schedule
+- May work for other clients
+- Provides own equipment and tools
+
+7. CONFIDENTIAL INFORMATION
+
+The Consultant agrees to:
+- Maintain confidentiality of Company's proprietary information
+- Not disclose trade secrets or business strategies
+- Return all confidential materials upon termination
+- Maintain confidentiality obligations after Agreement ends
+
+8. NON-SOLICITATION
+
+During the term and for {{non_solicitation_period}} months after, the Consultant agrees not to solicit Company's employees or clients for competing purposes.
+
+9. INTELLECTUAL PROPERTY
+
+Work Product: {{ip_terms}}
+
+Background IP: Each party retains ownership of their pre-existing intellectual property.
+
+10. DELIVERABLES AND DEADLINES
+
+{{deliverables_schedule}}
+
+11. PROFESSIONAL STANDARDS
+
+The Consultant will:
+- Perform services with professional skill and care
+- Meet industry standards and best practices
+- Comply with applicable laws and regulations
+- Notify Company of any conflicts of interest
+
+12. INSURANCE
+
+The Consultant maintains the following insurance:
+{{insurance_requirements}}
+
+13. LIMITATION OF LIABILITY
+
+Consultant's liability is limited to the amount paid under this Agreement, except for gross negligence or willful misconduct.
+
+14. INDEMNIFICATION
+
+Each party agrees to indemnify the other against claims arising from their own negligence or breach of this Agreement.
+
+15. DISPUTE RESOLUTION
+
+Disputes will be resolved through:
+1. Good faith negotiation
+2. Mediation in {{mediation_location}}
+3. {{final_dispute_method}}
+
+16. GENERAL PROVISIONS
+
+Assignment: Neither party may assign this Agreement without written consent.
+
+Amendments: Changes must be in writing and signed by both parties.
+
+Severability: If any provision is invalid, the remainder continues in effect.
+
+Governing Law: {{jurisdiction}}
+
+17. ENTIRE AGREEMENT
+
+This Agreement represents the complete understanding between the parties.
+
+SIGNATURES:
+
+CONSULTANT:
+
+_______________________________
+{{consultant_name}}
+Date: {{date}}
+
+COMPANY:
+
+_______________________________
+{{company_name}}
+By: {{company_representative}}
+Title: {{representative_title}}
+Date: {{date}}
