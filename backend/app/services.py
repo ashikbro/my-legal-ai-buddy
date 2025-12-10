@@ -17,10 +17,16 @@ except ImportError:
 
 # OpenAI integration (optional - works without API key for demo)
 try:
-    import openai
-    openai.api_key = os.environ.get('OPENAI_API_KEY', '')
-    USE_OPENAI = bool(openai.api_key)
+    from openai import OpenAI
+    api_key = os.environ.get('OPENAI_API_KEY', '')
+    if api_key:
+        openai_client = OpenAI(api_key=api_key)
+        USE_OPENAI = True
+    else:
+        openai_client = None
+        USE_OPENAI = False
 except ImportError:
+    openai_client = None
     USE_OPENAI = False
     print("Warning: OpenAI library not installed. Install with: pip install openai")
 
@@ -169,7 +175,7 @@ def summarize_with_openai(text: str) -> str:
         if len(text) > max_chars:
             text = text[:max_chars] + "..."
         
-        response = openai.ChatCompletion.create(
+        response = openai_client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a legal assistant that provides clear, plain language summaries of legal documents."},
@@ -283,7 +289,7 @@ def identify_risks_with_openai(text: str) -> List[Dict]:
         if len(text) > max_chars:
             text = text[:max_chars] + "..."
         
-        response = openai.ChatCompletion.create(
+        response = openai_client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a legal assistant that identifies risks in legal documents. Respond with a JSON array of risks, each with 'risk', 'severity' (high/medium/low), and 'description' fields."},
@@ -382,7 +388,7 @@ def suggest_improvements_with_openai(text: str) -> List[Dict]:
         if len(text) > max_chars:
             text = text[:max_chars] + "..."
         
-        response = openai.ChatCompletion.create(
+        response = openai_client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a legal assistant that suggests improvements for legal documents. Respond with a JSON array of suggestions, each with 'category', 'suggestion', 'description', and 'priority' (high/medium/low) fields."},
