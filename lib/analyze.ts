@@ -28,7 +28,7 @@ const rules: Array<{
     severity: "high",
     title: "Liability limitation detected",
     explanation: "Check exclusions, caps, carve-outs, and whether the limitation is mutual.",
-    pattern: /\bliabilit(y|ies)|limitation of liability|liable for\b/i,
+    pattern: /\b(?:liabilit(y|ies)|limitation of liability|liable for)\b/i,
   },
   {
     category: "indemnity",
@@ -70,7 +70,7 @@ const rules: Array<{
     severity: "low",
     title: "Governing law or jurisdiction detected",
     explanation: "Confirm the governing law, venue, dispute process, and enforceability in your situation.",
-    pattern: /\bgoverning law|jurisdiction|venue|arbitration\b/i,
+    pattern: /\b(?:governing law|jurisdiction|venue|arbitration)\b/i,
   },
 ];
 
@@ -86,7 +86,7 @@ export function analyzeDocument(content: string): Analysis {
   const sections = lines.filter((line) => line.length <= 100 && (/^\d+[\].): -]/.test(line) || /^[A-Z][A-Z\s&-]{5,}$/.test(line))).slice(0, 20);
   const dates = normalized.match(/\b(?:\d{1,2}[/-]\d{1,2}[/-]\d{2,4}|(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4})\b/gi) ?? [];
   const parties = lines
-    .filter((line) => /\b(the parties|between|agreement between|("provider"|"client"|"customer"|"company"))\b/i.test(line))
+    .filter((line) => /\b(?:the parties|between|agreement between)\b|"(?:provider|client|customer|company)"/i.test(line))
     .slice(0, 6);
 
   const findings = rules.flatMap((rule) => {

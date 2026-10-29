@@ -19,25 +19,32 @@ export async function PUT(request: Request, context: RouteContext) {
     const parsed = updateSchema.safeParse(await request.json());
     if (!parsed.success) return NextResponse.json({ error: "Title and document text are required." }, { status: 400 });
 
-    const document = await prisma.document.findUnique({
-      where: { id, ownerId: user.id },
-      include: { versions: { orderBy: { version: "desc" }, take: 1 } },
-    });
-    if (!document || !document.versions[0]) return NextResponse.json({ error: "Document not found." }, { status: 404 });
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      const document = await prisma.document.findUnique({
+        where: { id, ownerId: user.id },
+        include: { versions: { orderBy: { version: "desc" }, take: 1 } },
+      });
+      if (!document || !document.versions[0]) return NextResponse.json({ error: "Document not found." }, { status: 404 });
 
-    const nextVersion = document.versions[0].version + 1;
-    await prisma.$transaction([
-      prisma.document.update({ where: { id }, data: { title: parsed.data.title } }),
-      prisma.version.create({
-        data: {
-          documentId: id,
-          version: nextVersion,
-          content: parsed.data.content,
-          analysis: analyzeDocument(parsed.data.content),
-        },
-      }),
-    ]);
-    return NextResponse.json({ id, version: nextVersion });
+      const nextVersion = document.versions[0].version + 1;
+      try {
+        await prisma.$transaction([
+          prisma.document.update({ where: { id }, data: { title: parsed.data.title } }),
+          prisma.version.create({
+            data: {
+              documentId: id,
+              version: nextVersion,
+              content: parsed.data.content,
+              analysis: analyzeDocument(parsed.data.content),
+            },
+          }),
+        ]);
+        return NextResponse.json({ id, version: nextVersion });
+      } catch (error) {
+        if (!(error && typeof error === "object" && "code" in error && error.code === "P2002")) throw error;
+      }
+    }
+    return NextResponse.json({ error: "This document was changed concurrently. Please retry." }, { status: 409 });
   } catch (error) {
     console.error("Document update failed", error);
     return NextResponse.json({ error: "Unable to update document." }, { status: 500 });

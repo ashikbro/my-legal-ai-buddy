@@ -5,7 +5,7 @@ import { prisma } from "@/lib/prisma";
 
 const schema = z.object({
   email: z.string().trim().email().max(254).transform((value) => value.toLowerCase()),
-  password: z.string().min(12).max(200),
+  password: z.string().min(12).refine((value) => new TextEncoder().encode(value).length <= 72, "Password must be at most 72 UTF-8 bytes."),
 });
 
 export async function POST(request: Request) {

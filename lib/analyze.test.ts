@@ -33,4 +33,16 @@ describe("analyzeDocument", () => {
 
     expect(analysis.dates).toEqual(["January 1, 2027"]);
   });
+
+  it("does not flag words that only contain legal terms", () => {
+    const analysis = analyzeDocument("The equipment must be reliable for five years.\nAnnual revenue is USD 100,000.");
+
+    expect(analysis.findings).toEqual([]);
+  });
+
+  it("recognizes quoted party definitions", () => {
+    const analysis = analyzeDocument('Acme Ltd. ("Provider") and Example Inc. ("Client") agree to the terms.');
+
+    expect(analysis.parties).toHaveLength(1);
+  });
 });

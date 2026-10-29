@@ -16,18 +16,23 @@ export default function LoginPage() {
     event.preventDefault();
     setBusy(true);
     setError("");
-    const response = await fetch(`/api/auth/${signup ? "signup" : "login"}`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
-    const payload = await response.json();
-    setBusy(false);
-    if (!response.ok) {
-      setError(payload.error ?? "Authentication failed.");
-      return;
+    try {
+      const response = await fetch(`/api/auth/${signup ? "signup" : "login"}`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const payload = await response.json();
+      if (!response.ok) {
+        setError(payload.error ?? "Authentication failed.");
+        return;
+      }
+      router.push("/documents");
+    } catch {
+      setError("Unable to reach the server. Please try again.");
+    } finally {
+      setBusy(false);
     }
-    router.push("/documents");
   }
 
   return (

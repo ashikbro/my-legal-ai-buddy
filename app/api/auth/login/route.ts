@@ -3,7 +3,10 @@ import { z } from "zod";
 import { createSession, setSessionCookie, verifyPassword } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
-const schema = z.object({ email: z.string().trim().email().transform((value) => value.toLowerCase()), password: z.string().min(1) });
+const schema = z.object({
+  email: z.string().trim().email().transform((value) => value.toLowerCase()),
+  password: z.string().min(1).refine((value) => new TextEncoder().encode(value).length <= 72, "Password must be at most 72 UTF-8 bytes."),
+});
 
 export async function POST(request: Request) {
   const parsed = schema.safeParse(await request.json());

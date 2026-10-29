@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import DeleteDocumentButton from "./delete-button";
+import LogoutButton from "./logout-button";
 import { getCurrentUser } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
@@ -22,7 +23,10 @@ export default async function DocumentsPage() {
           <h1>Saved documents</h1>
           <p className="muted">Documents are stored locally in the configured database.</p>
         </div>
-        <Link href="/documents/new"><button>New review</button></Link>
+        <div className="actions">
+          <Link href="/documents/new"><button>New review</button></Link>
+          <LogoutButton />
+        </div>
       </div>
       {documents.length === 0 ? (
         <section className="card">

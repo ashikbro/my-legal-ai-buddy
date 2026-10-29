@@ -14,18 +14,23 @@ export default function NewDocument() {
     event.preventDefault();
     setError("");
     setSaving(true);
-    const response = await fetch("/api/documents", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ title, content }),
-    });
-    const payload = await response.json();
-    setSaving(false);
-    if (!response.ok) {
-      setError(payload.error ?? "Unable to save document");
-      return;
+    try {
+      const response = await fetch("/api/documents", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ title, content }),
+      });
+      const payload = await response.json();
+      if (!response.ok) {
+        setError(payload.error ?? "Unable to save document");
+        return;
+      }
+      router.push(`/documents/${payload.id}`);
+    } catch {
+      setError("Unable to reach the server. Please try again.");
+    } finally {
+      setSaving(false);
     }
-    router.push(`/documents/${payload.id}`);
   }
 
   async function readFile(file: File) {

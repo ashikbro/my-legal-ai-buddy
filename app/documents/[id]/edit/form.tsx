@@ -14,18 +14,23 @@ export default function EditDocumentForm({ id, title: initialTitle, content: ini
     event.preventDefault();
     setSaving(true);
     setError("");
-    const response = await fetch(`/api/documents/${id}`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ title, content }),
-    });
-    const payload = await response.json();
-    if (!response.ok) {
-      setError(payload.error ?? "Unable to save document");
+    try {
+      const response = await fetch(`/api/documents/${id}`, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ title, content }),
+      });
+      const payload = await response.json();
+      if (!response.ok) {
+        setError(payload.error ?? "Unable to save document");
+        return;
+      }
+      router.push(`/documents/${id}`);
+    } catch {
+      setError("Unable to reach the server. Please try again.");
+    } finally {
       setSaving(false);
-      return;
     }
-    router.push(`/documents/${id}`);
   }
 
   return (
