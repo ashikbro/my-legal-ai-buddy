@@ -3,6 +3,7 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { analyzeDocument } from "@/lib/analyze";
 import { getCurrentUser } from "@/lib/auth";
+import { isSameOrigin } from "@/lib/security";
 
 const documentSchema = z.object({
   title: z.string().trim().min(1).max(120),
@@ -11,9 +12,16 @@ const documentSchema = z.object({
 
 export async function POST(request: Request) {
   try {
+    if (!isSameOrigin(request)) return NextResponse.json({ error: "Invalid request origin." }, { status: 403 });
     const user = await getCurrentUser();
     if (!user) return NextResponse.json({ error: "Authentication required." }, { status: 401 });
-    const parsed = documentSchema.safeParse(await request.json());
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json({ error: "Request body must be valid JSON." }, { status: 400 });
+    }
+    const parsed = documentSchema.safeParse(body);
     if (!parsed.success) return NextResponse.json({ error: "Title and document text are required." }, { status: 400 });
     const analysis = analyzeDocument(parsed.data.content);
     const document = await prisma.document.create({

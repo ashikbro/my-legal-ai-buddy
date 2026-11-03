@@ -3,6 +3,7 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { analyzeDocument } from "@/lib/analyze";
 import { getCurrentUser } from "@/lib/auth";
+import { isSameOrigin } from "@/lib/security";
 
 type RouteContext = { params: Promise<{ id: string }> };
 
@@ -14,9 +15,16 @@ const updateSchema = z.object({
 export async function PUT(request: Request, context: RouteContext) {
   const { id } = await context.params;
   try {
+    if (!isSameOrigin(request)) return NextResponse.json({ error: "Invalid request origin." }, { status: 403 });
     const user = await getCurrentUser();
     if (!user) return NextResponse.json({ error: "Authentication required." }, { status: 401 });
-    const parsed = updateSchema.safeParse(await request.json());
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json({ error: "Request body must be valid JSON." }, { status: 400 });
+    }
+    const parsed = updateSchema.safeParse(body);
     if (!parsed.success) return NextResponse.json({ error: "Title and document text are required." }, { status: 400 });
 
     for (let attempt = 0; attempt < 3; attempt += 1) {
@@ -54,6 +62,7 @@ export async function PUT(request: Request, context: RouteContext) {
 export async function DELETE(_request: Request, context: RouteContext) {
   const { id } = await context.params;
   try {
+    if (!isSameOrigin(_request)) return NextResponse.json({ error: "Invalid request origin." }, { status: 403 });
     const user = await getCurrentUser();
     if (!user) return NextResponse.json({ error: "Authentication required." }, { status: 401 });
     const deleted = await prisma.document.deleteMany({ where: { id, ownerId: user.id } });
