@@ -45,6 +45,7 @@ export async function setSessionCookie(token: string, expiresAt: Date) {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
+    priority: "high",
     expires: expiresAt,
     path: "/",
   });

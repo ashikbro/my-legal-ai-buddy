@@ -41,6 +41,7 @@ Open `http://localhost:3000`.
 npm run lint
 npm run typecheck
 npm run build
+npm test
 ```
 
 ## Data and privacy
@@ -48,6 +49,13 @@ npm run build
 The default database is `prisma/dev.db`, stored locally and ignored by Git.
 This MVP performs deterministic local analysis and does not send document
 contents to a model provider. Authentication and owner-scoped authorization
-are included, but encrypted storage, retention controls, CSRF protection, and
-a security review are still required before public deployment. Baseline browser
-security headers are configured in `next.config.ts`.
+are included. Mutating requests validate their origin, authentication attempts
+are rate-limited per forwarded client address, malformed JSON is rejected, and
+security-focused browser headers are configured in `next.config.ts`.
+
+Before public deployment, add encrypted storage and an explicit retention
+policy, configure a trusted proxy for accurate client identification, run
+dependency and application security reviews, and use a managed database with
+backups. The in-memory rate limiter is intentionally suitable only for a
+single application instance; replace it with shared infrastructure when
+scaling horizontally.
